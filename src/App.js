@@ -3,7 +3,7 @@ import './App.css';
 import QuestionSpace from './question.js';
 import AnswerSpace from './answer.js';
 
-function App() {
+export default function App() {
   const possibleAnswers = [
     'It is certain',
     'It is decidedly so',
@@ -31,6 +31,7 @@ function App() {
 
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('Welcome!');
+  const [answer, setAnswer] = useState('Ask me, then shake');
   const [anim, setAnim] = useState('');
   const [blur, setBlur] = useState(false);
 
@@ -49,6 +50,7 @@ function App() {
     if(input.length){
       setOutput(input);
       setInput('');
+      setAnswer(possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)]);
       console.log("bogos binted");
     }
     
@@ -57,9 +59,8 @@ function App() {
   return (
     <div className="App">
       <QuestionSpace handleChange={handleChange} handleSubmit={handleSubmit} input={input}/>
-      <AnswerSpace question={output}/>
+      <AnswerSpace question={output} answer={answer}/>
     </div>
   );
 }
 
-export default App;
