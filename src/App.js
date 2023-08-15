@@ -1,9 +1,10 @@
 import './App.css';
+import QuestionSpace from './question.js';
 
 function App() {
   return (
     <div className="App">
-      <h1>Esto es una app chida</h1>
+      <QuestionSpace />
     </div>
   );
 }
