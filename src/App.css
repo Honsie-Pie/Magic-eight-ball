@@ -1,6 +1,6 @@
 :root{
-  --bg-color: white;
-  --ground-color: white;
+  --bg-color: #3A2555;
+  --ground-color: green;
 }
 
 *, *::before, *::after{
@@ -14,7 +14,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #3A2555;
+  background-color: var(--bg-color);
   display:flex;
   flex-direction:column;
   justify-content: space-evenly;
@@ -69,6 +69,17 @@
   z-index:1;
 }
 
+#outer-inner{
+  width: 475px;
+  height: 475px;
+  position:absolute;
+  z-index:5;
+  background-color: transparent;
+  border-radius:50%;
+  border: 2px solid gray;
+  filter: blur(2px);
+}
+
 #inner-circle{
   width: 220px;
   height: 220px;
@@ -91,13 +102,14 @@
   left: 3%;
   opacity: 0.95;
   z-index: 1;
+  filter: blur(1px);
 }
 
 #shadowy{
   border: solid 27px black;
   border-color:  black transparent transparent transparent;
   transform: rotate(7deg);
-  top: 2.9%;
+  top: 2.85%;
   left: 2.0%;
   z-index: 2;
 }
@@ -106,10 +118,10 @@
   width: 200px;
   height: 140px;
   background: radial-gradient(
-    farthest-corner at 50% 25%,
-    rgba(0,0,175,1),
-    rgba(0,0,255,0.75),
-    rgba(0,0,255,0.4)
+    farthest-corner at 50% 35%,
+    rgba(0,0,220,1),
+    rgba(0,0,220,0.75),
+    rgba(0,0,220,0.4)
     );
   clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
   display:flex;
@@ -126,8 +138,9 @@
 
 .output-answer{
   color:white;
-  margin-top: -50px;
-  width:50%;
+  font-size: 1.25rem;
+  margin-top: -40px;
+  width:45%;
 }
 
 .ball-shadow{
@@ -143,11 +156,46 @@
 }
 
 .ground{
-  background-color:green;
+  background-color: var(--ground-color);
   width:100%;
   height:5%;
   position:fixed;
   bottom:0;
   z-index:0;
-  box-shadow: 0 -5px 25px 35px green;
+  box-shadow: 0 -5px 25px 35px var(--ground-color);
+}
+
+.blurred-answer{
+  animation-name: blurring;
+  animation-duration: 850ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+
+@keyframes blurring{
+  0%{
+    filter:blur(15px);
+  }
+  50%{
+    filter: blur(12px);
+  }
+  100%{
+    filter:blur(0px);
+  }
+}
+
+.anim1{
+  background-color: red;
+}
+
+.anim2{
+  background-color: blue;
+}
+
+.anim3{
+  background-color: violet;
+}
+
+.anim4{
+  background-color:yellow;
 }

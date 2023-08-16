@@ -29,6 +29,13 @@ export default function App() {
     'No'
   ];
 
+  const possibleAnims = [
+    "anim1",
+    "anim2",
+    "anim3",
+    "anim4"
+  ];
+
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('Welcome!');
   const [answer, setAnswer] = useState('Ask me, then shake');
@@ -49,9 +56,11 @@ export default function App() {
     event.preventDefault();
     if(input.length){
       setOutput(input);
-      setInput('');
       setAnswer(possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)]);
-      console.log("bogos binted");
+      setInput('');
+      setAnim(possibleAnims[0]);
+      console.log(anim);
+      setBlur(true);
     }
     
   }
@@ -59,7 +68,7 @@ export default function App() {
   return (
     <div className="App">
       <QuestionSpace handleChange={handleChange} handleSubmit={handleSubmit} input={input}/>
-      <AnswerSpace question={output} answer={answer}/>
+      <AnswerSpace question={output} answer={answer} anim={anim} blur={blur}/>
       <div className="ground"></div>
     </div>
   );
