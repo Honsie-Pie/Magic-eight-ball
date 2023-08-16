@@ -1,3 +1,8 @@
+:root{
+  --bg-color: white;
+  --ground-color: white;
+}
+
 *, *::before, *::after{
   margin: 0;
   padding: 0;
@@ -82,17 +87,18 @@
 
 #shiny{
   transform: rotate(-15deg);
-  top: 3%;
+  top: 3.5%;
   left: 3%;
+  opacity: 0.95;
   z-index: 1;
 }
 
 #shadowy{
-  border: solid 25px black;
+  border: solid 27px black;
   border-color:  black transparent transparent transparent;
-  transform: rotate(3.5deg);
-  top: 2.4%;
-  left: 2.4%;
+  transform: rotate(7deg);
+  top: 2.9%;
+  left: 2.0%;
   z-index: 2;
 }
 
