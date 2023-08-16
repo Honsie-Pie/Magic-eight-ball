@@ -58,9 +58,9 @@ export default function App() {
       setOutput(input);
       setAnswer(possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)]);
       setInput('');
-      setAnim(possibleAnims[0]);
-      console.log(anim);
+      setAnim(possibleAnims[Math.floor(Math.random() * possibleAnims.length)])
       setBlur(true);
+      console.log(anim);
     }
     
   }

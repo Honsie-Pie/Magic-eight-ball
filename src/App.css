@@ -83,6 +83,7 @@
 #inner-circle{
   width: 220px;
   height: 220px;
+  background-color: #000030;
   border: 2px solid #4A525A;
 }
 
@@ -128,7 +129,7 @@
   align-items: center;
   justify-content:center;
   filter: none;
-  margin-top: 65px;
+  margin-top: 63px;
 }
 
 .output-question{
@@ -141,6 +142,10 @@
   font-size: 1.25rem;
   margin-top: -40px;
   width:45%;
+}
+
+.output-answer::first-letter{
+  font-size: 1.6rem;
 }
 
 .ball-shadow{
@@ -184,18 +189,124 @@
   }
 }
 
-.anim1{
-  background-color: red;
+.anim5{
+  animation-name: wildshake;
+  animation-duration: 50ms;
+  animation-iteration-count: 10;
+  animation-timing-function: ease-out;
 }
 
 .anim2{
-  background-color: blue;
+  animation-name: rotated;
+  animation-duration: 200ms;
+  animation-iteration-count: 5;
+  animation-timing-function: ease-out;
+}
+
+.anim2 .reflection{
+  animation-name: anti-rotated;
+  animation-duration: 200ms;
+  animation-iteration-count: 5;
+  animation-timing-function: ease-out;
 }
 
 .anim3{
-  background-color: violet;
+  animation-name: rotated;
+  animation-duration: 200ms;
+  animation-iteration-count: 5;
+  animation-timing-function: ease-out;
 }
 
-.anim4{
-  background-color:yellow;
+.anim3 .reflection{
+  animation-name: anti-rotated;
+  animation-duration: 200ms;
+  animation-iteration-count: 5;
+  animation-timing-function: ease-out;
+}
+
+.anim4, .anim1{
+  animation-name: rotated;
+  animation-duration: 200ms;
+  animation-iteration-count: 5;
+  animation-timing-function: ease-out;
+}
+
+.anim4 .reflection, .anim1 .refelction{
+  animation-name: anti-rotated;
+  animation-duration: 200ms;
+  animation-iteration-count: 5;
+  animation-timing-function: ease-out;
+}
+
+.anim6{
+  animation-name: wiggle;
+  animation-duration: 100ms;
+  animation-iteration-count: 5;
+  animation-timing-function: ease-out;
+}
+
+@keyframes wildshake {
+  0%{
+    transform: translate(-5%,0%);
+  }
+  50%{
+    transform: translate(5%,1%);
+  }
+  100%{
+    transform: translate(-5%,0%);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+ 80% {
+    transform: rotate(0deg);
+  }
+ 85% {
+    transform: rotate(17deg);
+}
+ 95% {
+    transform: rotate(-17deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+
+@keyframes rotated{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  75%{
+    transform: rotate(270deg)
+  }
+  99%{
+    transform: rotate(357deg);
+  }
+  100%{
+    tansform: rotate(360deg);
+  }
+}
+
+@keyframes anti-rotated{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(-180deg);
+  }
+  75%{
+    transform: rotate(-270deg)
+  }
+  99%{
+    transform: rotate(-357deg);
+  }
+  100%{
+    tansform: rotate(-360deg);
+  }
 }
