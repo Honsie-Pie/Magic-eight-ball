@@ -35,8 +35,8 @@ export default function App() {
   const [anim, setAnim] = useState('');
   const [blur, setBlur] = useState(false);
 
-  React.useEffect(() => {
-    console.log("xd");
+  useEffect(() => {
+    setOutput("Welcome");
   }, []);
 
   function handleChange(event){
@@ -60,6 +60,7 @@ export default function App() {
     <div className="App">
       <QuestionSpace handleChange={handleChange} handleSubmit={handleSubmit} input={input}/>
       <AnswerSpace question={output} answer={answer}/>
+      <div className="ground"></div>
     </div>
   );
 }

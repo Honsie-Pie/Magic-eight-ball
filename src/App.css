@@ -10,11 +10,13 @@
   height: 100vh;
   overflow: hidden;
   background-color: black;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-evenly;
 }
 
 .question-space, .answer-space{
   display:flex;
-  flex-direction:column;
   align-items: center;
   margin: 0 auto;
   gap: 1em;
@@ -26,12 +28,13 @@
   padding: 1em 1.5em;
   border-radius: 15px;
   background-color: navy;
+  flex-direction:row;
 }
 
 .answer-space{
   padding: 1em 1.5em;
-  background-color: #8C2E2C;
   width: 80%;
+  flex-direction:column;
 }
 
 #question{
@@ -44,10 +47,29 @@
   height: 2.25em;
   width: 35%;
 }
+#outer-circle, #inner-circle{
+  background-color: #07070a;
+  border: 2px solid #4A525A;
+  border-radius:50%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
 
-.triangle{
-  width: 250px;
-  height: 175px;
+#outer-circle{
+  width: 500px;
+  height: 500px;
+  z-index:1;
+}
+
+#inner-circle{
+  width: 220px;
+  height: 220px;
+}
+
+#triangle{
+  width: 200px;
+  height: 140px;
   background: radial-gradient(
     farthest-corner at 50% 25%,
     rgba(0,0,175,1),
@@ -55,7 +77,30 @@
     rgba(0,0,255,0.4)
     );
   clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
-  margin: 0 auto;
-  padding: 40px;
+  display:flex;
+  align-items: center;
+  justify-content:center;
   filter: none;
+  margin-top: 65px;
+}
+
+.output-question{
+  color:white;
+  font-size: 2.5rem;
+}
+
+.output-answer{
+  color:white;
+  margin-top: -50px;
+  width:50%;
+}
+
+.ground{
+  background-color:green;
+  width:100%;
+  height:12.5%;
+  position:fixed;
+  bottom:0;
+  z-index:0;
+  box-shadow: 0 -5px 25px 35px green;
 }
