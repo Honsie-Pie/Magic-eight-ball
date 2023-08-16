@@ -1,6 +1,9 @@
 :root{
-  --bg-color: #3A2555;
+  --bg-color: #352050;
   --ground-color: green;
+  --ball-color: #181115;
+  --inner-color: #000030;
+  --tri-color: rgba(0,0,220,1);
 }
 
 *, *::before, *::after{
@@ -33,7 +36,6 @@
   min-width: 400px;
   padding: 1em 1.5em;
   border-radius: 15px;
-  background-color: navy;
   flex-direction:row;
 }
 
@@ -47,14 +49,24 @@
   width:100%;
   padding: 0.25em;
   font-size: 1.1rem;
+  height: 2em;
+  background-color: var(--inner-color);
+  color:white;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 #submit{
   height: 2.25em;
-  width: 35%;
+  padding: 0.5em 1.5em;
+  background-color: var(--tri-color);
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
 }
+
 #outer-circle, #inner-circle{
-  background-color: #07070a;
   border-radius:50%;
   display: flex;
   align-items: center;
@@ -62,6 +74,7 @@
 }
 
 #outer-circle{
+  background-color: var(--ball-color);
   width: 475px;
   height: 475px;
   position:relative;
@@ -83,23 +96,25 @@
 #inner-circle{
   width: 220px;
   height: 220px;
-  background-color: #000030;
-  border: 2px solid #4A525A;
+  background-color: var(--inner-color);
+  border: 3px solid #24191F;
+  box-shadow: 0 0 45px 40px black;
 }
 
 .reflection{
   background-color:transparent;
   width: 475px; 
   height: 475px;  
-  border: solid 20px white;
+  border: solid 17px white;
   border-color:  white transparent transparent transparent;
   border-radius: 50%;
   position: absolute;
+  transform-origin: 50% 50%;
 }
 
 #shiny{
   transform: rotate(-15deg);
-  top: 3.5%;
+  top: 3.75%;
   left: 3%;
   opacity: 0.95;
   z-index: 1;
@@ -107,8 +122,8 @@
 }
 
 #shadowy{
-  border: solid 27px black;
-  border-color:  black transparent transparent transparent;
+  border: solid 28px black;
+  border-color:  var(--ball-color) transparent transparent transparent;
   transform: rotate(7deg);
   top: 2.85%;
   left: 2.0%;
@@ -120,7 +135,7 @@
   height: 140px;
   background: radial-gradient(
     farthest-corner at 50% 35%,
-    rgba(0,0,220,1),
+    var(--tri-color),
     rgba(0,0,220,0.75),
     rgba(0,0,220,0.4)
     );
@@ -135,17 +150,19 @@
 .output-question{
   color:white;
   font-size: 2.5rem;
+  font-family: Rubik, sans-serif;
 }
 
 .output-answer{
   color:white;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-top: -40px;
   width:45%;
+  font-family: Roboto Condensed, sans-serif;
 }
 
 .output-answer::first-letter{
-  font-size: 1.6rem;
+  font-size: 1.7rem;
 }
 
 .ball-shadow{
@@ -189,61 +206,27 @@
   }
 }
 
-.anim5{
-  animation-name: wildshake;
-  animation-duration: 50ms;
-  animation-iteration-count: 10;
+.anim1{
+  animation-name: rotated;
+  animation-duration: 200ms;
+  animation-iteration-count: 3;
   animation-timing-function: ease-out;
 }
 
 .anim2{
-  animation-name: rotated;
-  animation-duration: 200ms;
-  animation-iteration-count: 5;
-  animation-timing-function: ease-out;
-}
-
-.anim2 .reflection{
-  animation-name: anti-rotated;
-  animation-duration: 200ms;
+  animation-name: wildshake;
+  animation-duration: 75ms;
   animation-iteration-count: 5;
   animation-timing-function: ease-out;
 }
 
 .anim3{
-  animation-name: rotated;
-  animation-duration: 200ms;
-  animation-iteration-count: 5;
-  animation-timing-function: ease-out;
-}
-
-.anim3 .reflection{
-  animation-name: anti-rotated;
-  animation-duration: 200ms;
-  animation-iteration-count: 5;
-  animation-timing-function: ease-out;
-}
-
-.anim4, .anim1{
-  animation-name: rotated;
-  animation-duration: 200ms;
-  animation-iteration-count: 5;
-  animation-timing-function: ease-out;
-}
-
-.anim4 .reflection, .anim1 .refelction{
-  animation-name: anti-rotated;
-  animation-duration: 200ms;
-  animation-iteration-count: 5;
-  animation-timing-function: ease-out;
-}
-
-.anim6{
   animation-name: wiggle;
   animation-duration: 100ms;
   animation-iteration-count: 5;
   animation-timing-function: ease-out;
 }
+
 
 @keyframes wildshake {
   0%{
@@ -289,24 +272,6 @@
     transform: rotate(357deg);
   }
   100%{
-    tansform: rotate(360deg);
-  }
-}
-
-@keyframes anti-rotated{
-  0%{
-    transform: rotate(0deg);
-  }
-  50%{
-    transform: rotate(-180deg);
-  }
-  75%{
-    transform: rotate(-270deg)
-  }
-  99%{
-    transform: rotate(-357deg);
-  }
-  100%{
-    tansform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }

@@ -32,8 +32,7 @@ export default function App() {
   const possibleAnims = [
     "anim1",
     "anim2",
-    "anim3",
-    "anim4"
+    "anim3"
   ];
 
   const [input, setInput] = useState('');
