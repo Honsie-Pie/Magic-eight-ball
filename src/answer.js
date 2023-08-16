@@ -5,6 +5,7 @@ export default function AnswerSpace(props){
         <div className="answer-space">
             <h1 className="output-question">{props.question}</h1>
             <Ball answer={props.answer}/>
+            <div className="ball-shadow"></div>
         </div>
     );
 }
