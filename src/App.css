@@ -1,6 +1,6 @@
 :root{
   --bg-color: #352050;
-  --ground-color: green;
+  --ground-color: #1DAF2B;
   --ball-color: #181115;
   --inner-color: #000030;
   --tri-color: rgba(0,0,220,1);
@@ -167,14 +167,14 @@
 
 .ball-shadow{
   background-color: black;
-  width: 425px;
+  width: 420px;
   height: 10px;
   border-radius: 100%;
   z-index: 1;
   position: relative;
   top:0px;
-  left: 55px;
-  box-shadow: 0px 0px 15px 10px;
+  left: 65px;
+  box-shadow: 0px 0px 15px 12px;
 }
 
 .ground{
@@ -194,6 +194,13 @@
   animation-timing-function: ease-out;
 }
 
+.blurred-question{
+  animation-name: unfolding;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+
 @keyframes blurring{
   0%{
     filter:blur(15px);
@@ -203,6 +210,17 @@
   }
   100%{
     filter:blur(0px);
+  }
+}
+
+@keyframes unfolding{
+  0%{
+    transform: scale(0.2, 4);
+    filter:blur(10px);
+  } 
+  100%{
+    transform: scale(1, 1);
+    filter: blur(0px);
   }
 }
 
