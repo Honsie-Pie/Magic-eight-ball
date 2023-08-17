@@ -4,12 +4,25 @@
   --ball-color: #181115;
   --inner-color: #000030;
   --tri-color: rgba(0,0,220,1);
+
+  --circle-factor: 18px;
+  --inner-factor: 8px;
+  --trianglew-factor: 7px;
+  --triangleh-factor: 5px;
+  --shadow-factor: 16px;
+  --margin-factor: 1px;
+  --shiny-factor: 1px;
+  --shadowy-factor: 2px;
 }
 
 *, *::before, *::after{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
 }
 
 .App {
@@ -40,7 +53,7 @@
 }
 
 .answer-space{
-  padding: 1em 1.5em;
+  padding: 15px 1.5em;
   width: 80%;
   flex-direction:column;
 }
@@ -78,7 +91,7 @@
   width: 475px;
   height: 475px;
   position:relative;
-  top: 25px;
+  bottom: -25px;
   z-index:1;
 }
 
@@ -293,3 +306,173 @@
     transform: rotate(360deg);
   }
 }
+
+
+@media only screen and (max-width: 1200px){
+  html{
+    font-size: 15px;
+  }
+
+  #outer-circle{
+    bottom: -35px;
+  }
+
+  #outer-circle, #outer-inner, .reflection{
+    width: calc(475px - var(--circle-factor));
+    height: calc(475px - var(--circle-factor));
+  }
+
+  #inner-circle{
+    width: calc(220px - var(--inner-factor));
+    height: calc(220px - var(--inner-factor));
+  }
+
+  #triangle{
+    width: calc(200px - var(--trianglew-factor));
+    height: calc(140px - var(--triangleh-factor));
+  }
+
+  .ball-shadow{
+    width: calc(420px - var(--shadow-factor));
+  }
+
+  .output-answer{
+    margin-top: calc(-40px + var(--margin-factor));
+  }
+
+  .reflection{
+    border-width: calc(17px - var(--shiny-factor));
+  }
+
+  #shadowy{
+    border-width: calc(28px - var(--shadowy-factor));
+  }
+
+}
+
+@media only screen and (max-width: 992px){
+  html{
+    font-size: 14px;
+  }
+
+  #outer-circle{
+    bottom: -45px;
+  }
+
+  #outer-circle, #outer-inner, .reflection{
+    width: calc(475px - var(--circle-factor) * 2);
+    height: calc(475px - var(--circle-factor) * 2);
+  }
+
+  #inner-circle{
+    width: calc(220px - var(--inner-factor) * 2);
+    height: calc(220px - var(--inner-factor) * 2);
+  }
+
+  #triangle{
+    width: calc(200px - var(--trianglew-factor) * 2);
+    height: calc(140px - var(--triangleh-factor) * 2);
+  }
+
+  .ball-shadow{
+    width: calc(420px - var(--shadow-factor) * 2);
+  }
+
+  .output-answer{
+    margin-top: calc(-40px + var(--margin-factor) * 2);
+  }
+
+  .reflection{
+    border-width: calc(17px - var(--shiny-factor) * 2);
+  }
+
+  #shadowy{
+    border-width: calc(28px - var(--shadowy-factor) * 2);
+  }
+
+}
+
+@media only screen and (max-width: 768px){
+  html{
+    font-size: 13px;
+  }
+
+  #outer-circle{
+    bottom: -55px;
+  }
+
+  #outer-circle, #outer-inner, .reflection{
+    width: calc(475px - var(--circle-factor) * 3);
+    height: calc(475px - var(--circle-factor) * 3);
+  }
+
+  #inner-circle{
+    width: calc(220px - var(--inner-factor) * 3);
+    height: calc(220px - var(--inner-factor) * 3);
+  }
+
+  #triangle{
+    width: calc(200px - var(--trianglew-factor) * 3);
+    height: calc(140px - var(--triangleh-factor) * 3);
+  }
+
+  .ball-shadow{
+    width: calc(420px - var(--shadow-factor) * 3);
+  }
+
+  .output-answer{
+    margin-top: calc(-40px + var(--margin-factor) * 3);
+  }
+
+  .reflection{
+    border-width: calc(17px - var(--shiny-factor) * 3);
+  }
+
+  #shadowy{
+    border-width: calc(28px - var(--shadowy-factor) * 3);
+  }
+
+}
+
+@media only screen and (max-width: 600px){
+  html{
+    font-size: 12px;
+  }
+
+  #outer-circle{
+    bottom: -75px;
+  }
+
+  #outer-circle, #outer-inner, .reflection{
+    width: calc(475px - var(--circle-factor) * 6);
+    height: calc(475px - var(--circle-factor) * 6);
+  }
+
+  #inner-circle{
+    width: calc(220px - var(--inner-factor) * 6);
+    height: calc(220px - var(--inner-factor) * 6);
+  }
+
+  #triangle{
+    width: calc(200px - var(--trianglew-factor) * 6);
+    height: calc(140px - var(--triangleh-factor) * 6);
+  }
+
+  .ball-shadow{
+    width: calc(420px - var(--shadow-factor) * 6);
+  }
+
+  .output-answer{
+    margin-top: calc(-40px + var(--margin-factor) * 6);
+  }
+
+  .reflection{
+    border-width: calc(17px - var(--shiny-factor) * 5);
+  }
+
+  #shadowy{
+    border-width: calc(28px - var(--shadowy-factor) * 5);
+  }
+
+}
+
