@@ -61,8 +61,8 @@ html{
 #question{
   width:100%;
   padding: 0.25em;
-  font-size: 1.1rem;
-  height: 2em;
+  font-size: 16px;
+  height: 2.25em;
   background-color: var(--inner-color);
   color:white;
   border: 1px solid white;
@@ -70,13 +70,13 @@ html{
 }
 
 #submit{
-  height: 2.25em;
+  height: 2.5em;
   padding: 0.5em 1.5em;
   background-color: var(--tri-color);
   border: 1px solid white;
   border-radius: 5px;
   color: white;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 #outer-circle, #inner-circle{
@@ -185,7 +185,7 @@ html{
   border-radius: 100%;
   z-index: 1;
   position: relative;
-  top:0px;
+  bottom: 0px;
   left: 65px;
   box-shadow: 0px 0px 15px 12px;
 }
@@ -330,10 +330,12 @@ html{
   #triangle{
     width: calc(200px - var(--trianglew-factor));
     height: calc(140px - var(--triangleh-factor));
+    margin-top: calc(63px - var(--margin-factor));
   }
 
   .ball-shadow{
     width: calc(420px - var(--shadow-factor));
+    bottom: calc(0px - 10px);
   }
 
   .output-answer{
@@ -372,10 +374,12 @@ html{
   #triangle{
     width: calc(200px - var(--trianglew-factor) * 2);
     height: calc(140px - var(--triangleh-factor) * 2);
+    margin-top: calc(63px - var(--margin-factor) * 2);
   }
 
   .ball-shadow{
     width: calc(420px - var(--shadow-factor) * 2);
+    bottom: calc(0px - 20px);
   }
 
   .output-answer{
@@ -414,10 +418,12 @@ html{
   #triangle{
     width: calc(200px - var(--trianglew-factor) * 3);
     height: calc(140px - var(--triangleh-factor) * 3);
+    margin-top: calc(63px - var(--margin-factor) * 3);
   }
 
   .ball-shadow{
     width: calc(420px - var(--shadow-factor) * 3);
+    bottom: calc(0px - 30px);
   }
 
   .output-answer{
@@ -439,31 +445,38 @@ html{
     font-size: 12px;
   }
 
+  .App {
+    gap: 1em;
+    justify-content: center;
+  }
+
   #outer-circle{
-    bottom: -75px;
+    bottom: -70px;
   }
 
   #outer-circle, #outer-inner, .reflection{
-    width: calc(475px - var(--circle-factor) * 6);
-    height: calc(475px - var(--circle-factor) * 6);
+    width: calc(475px - var(--circle-factor) * 5);
+    height: calc(475px - var(--circle-factor) * 5);
   }
 
   #inner-circle{
-    width: calc(220px - var(--inner-factor) * 6);
-    height: calc(220px - var(--inner-factor) * 6);
+    width: calc(220px - var(--inner-factor) * 5);
+    height: calc(220px - var(--inner-factor) * 5);
   }
 
   #triangle{
-    width: calc(200px - var(--trianglew-factor) * 6);
-    height: calc(140px - var(--triangleh-factor) * 6);
+    width: calc(200px - var(--trianglew-factor) * 5);
+    height: calc(140px - var(--triangleh-factor) * 5);
+    margin-top: calc(63px - var(--margin-factor) * 5);
   }
 
   .ball-shadow{
-    width: calc(420px - var(--shadow-factor) * 6);
+    width: calc(420px - var(--shadow-factor) * 5);
+    bottom: calc(0px - 50px);
   }
 
   .output-answer{
-    margin-top: calc(-40px + var(--margin-factor) * 6);
+    margin-top: calc(-40px + var(--margin-factor) * 5);
   }
 
   .reflection{
