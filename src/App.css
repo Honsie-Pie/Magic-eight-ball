@@ -77,6 +77,7 @@ html{
   border-radius: 5px;
   color: white;
   font-size: 16px;
+  cursor: pointer;
 }
 
 #outer-circle, #inner-circle{
